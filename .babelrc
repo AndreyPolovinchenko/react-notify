@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "utils": "./src/utils",
+        "types": "./src/types",
+        "icons": "./src/icons",
+        "constants": "./src/constants",
+        "components": "./src/components"
+      }
+    }]
+  ]
+}

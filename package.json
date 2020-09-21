@@ -1,0 +1,45 @@
+{
+  "name": "react-notify",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf ./dist && webpack --mode development --config ./webpack.config.js && cp package.json dist/ && cp README.md dist/ && cd dist && npm link",
+    "prod": "rm -rf ./dist && webpack --mode development --config ./webpack.config.js && cp package.json dist/ && cp README.md dist/"
+  },
+  "author": "andrey_polovinchenko",
+  "license": "MIT",
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|js)$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-typescript": "^7.9.0",
+    "@svgr/webpack": "^5.4.0",
+    "babel-jest": "^25.2.6",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "jest": "^25.2.7",
+    "prettier": "^2.0.3",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@types/prop-types": "^15.7.3",
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-transition-group": "^4.4.0",
+    "aphrodite": "^2.4.0",
+    "prop-types": "^15.7.2",
+    "react-transition-group": "^4.4.1"
+  }
+}

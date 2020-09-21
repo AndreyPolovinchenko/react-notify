@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "target": "es5",
+    "allowJs": false,
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "lib": ["es2019", "es2017", "dom"],
+    "paths": {
+      "utils/*": ["utils/*"],
+      "utils": ["utils"],
+      "types/*": ["types/*"],
+      "types": ["types"],
+      "icons/*": ["icons/*"],
+      "icons": ["icons"],
+      "constants/*": ["constants/*"],
+      "constants": ["constants"],
+      "components/*": ["components/*"],
+      "components": ["components"]
+    },
+    "jsx": "react"
+  },
+  "include": ["custom.d.ts"]
+}
