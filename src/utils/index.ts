@@ -1,11 +1,12 @@
-import { MessageType, TimerType } from 'types';
+import { MessageType, NotificationType, TimerType } from 'types';
 
 export const createObserver = () => {
   const observers = new Map();
 
   const subscribe = (key: string, callback: Function) => observers.set(key, callback);
 
-  const dispatch = (key: string, message: MessageType, params: Object) => observers.get(key)?.(message, params);
+  const dispatch = (key: string, message: MessageType, params: NotificationType) =>
+    observers.get(key)?.(message, params);
 
   return {
     subscribe,
