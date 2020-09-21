@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 export type StylesType = { [key: string]: string | number };
 
 export enum NotificationTypes {
@@ -31,7 +29,7 @@ export type ContainerType = {
   typeStyles?: Object;
 };
 
-export type MessageType = string | number | Function;
+export type MessageType = string | Function;
 
 export enum TransitionTypes {
   fade = 'fade',
@@ -57,7 +55,7 @@ export type NotificationType = {
   onClose?: () => void;
   onClick?: () => void;
   autoClose?: number | boolean;
-  customCloseIcon?: string | React.ReactElement | Function;
+  customCloseIcon?: string | Function;
   typeStyles: Object;
   customStyles?: CustomStylesType;
   pauseOnHover?: boolean;
