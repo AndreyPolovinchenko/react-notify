@@ -30,7 +30,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.tsx',
-    library: '@jmind.systems/react-notifications',
+    library: 'react-notify',
     libraryTarget: 'umd'
   },
   externals: {
