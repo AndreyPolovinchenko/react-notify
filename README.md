@@ -1,1 +1,1 @@
-# Here is lib name 2
+# React-notify
