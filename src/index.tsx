@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as ReactDOM from 'react-dom';
 import { TransitionGroup } from 'react-transition-group';
-import { Notification } from 'components/Notification';
+import { Notification } from 'components';
 import { ContainerType, NotificationType, PositionTypes, MessageType } from 'types';
 import { typeStyles as defaultTypeStyles } from 'constants';
 import { createObserver, createNotificationID } from 'utils';
