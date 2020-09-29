@@ -46,21 +46,21 @@ export type TransitionType = {
 };
 
 export type NotificationType = {
-  id: string;
-  type?: NotificationTypes;
-  message: MessageType;
   in?: boolean;
-  position: PositionTypes;
+  id: string;
+  message: MessageType;
+  type?: NotificationTypes;
+  typeStyles: Object;
   remove: (id: string) => void;
+  position: PositionTypes;
   onClose?: () => void;
   onClick?: () => void;
   autoClose?: number | boolean;
-  customCloseIcon?: string | Function;
-  typeStyles: Object;
-  customStyles?: CustomStylesType;
   pauseOnHover?: boolean;
   transition?: TransitionTypes | TransitionType;
   transitionTimeout?: number;
+  customCloseIcon?: Function;
+  customStyles?: CustomStylesType;
 };
 
 export type TimerType = { resume: () => void; pause: () => void };

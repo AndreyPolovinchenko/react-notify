@@ -9,22 +9,22 @@ import { css } from 'aphrodite/no-important';
 import * as styles from './style';
 
 export const Notification: React.FC<NotificationType> = ({
-  id,
-  type,
-  message,
-  in: render,
-  position,
-  remove,
-  onClose,
-  onClick,
-  autoClose,
-  customCloseIcon,
-  typeStyles,
-  customStyles,
-  pauseOnHover,
-  transition,
-  transitionTimeout
-}) => {
+                                                           in: render,
+                                                           id,
+                                                           message,
+                                                           type,
+                                                           typeStyles,
+                                                           remove,
+                                                           position,
+                                                           onClose,
+                                                           onClick,
+                                                           autoClose,
+                                                           pauseOnHover,
+                                                           transition,
+                                                           transitionTimeout,
+                                                           customCloseIcon,
+                                                           customStyles
+                                                         }) => {
   let closingTimer: null | TimerType = null;
 
   const handleClose = React.useCallback(
@@ -71,15 +71,7 @@ export const Notification: React.FC<NotificationType> = ({
               onClick={handleClose}
               className={css(styles.closeWrapper(customStyles?.closeWrapper)._)}
             >
-              {customCloseIcon ? (
-                typeof customCloseIcon !== 'function' ? (
-                  customCloseIcon
-                ) : (
-                  customCloseIcon()
-                )
-              ) : (
-                <Close className={css(styles.close(customStyles?.closeIcon)._)} />
-              )}
+              {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)}/>}
             </div>
             <span data-test-id="message">{typeof message !== 'function' ? message : message()}</span>
           </div>
@@ -90,26 +82,26 @@ export const Notification: React.FC<NotificationType> = ({
 };
 
 Notification.propTypes = {
-  id: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.values(NotificationTypes)),
-  message: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
   in: PropTypes.bool,
-  position: PropTypes.oneOf(Object.values(PositionTypes)).isRequired,
+  id: PropTypes.string.isRequired,
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
+  type: PropTypes.oneOf(Object.values(NotificationTypes)),
+  typeStyles: PropTypes.object.isRequired,
   remove: PropTypes.func.isRequired,
+  position: PropTypes.oneOf(Object.values(PositionTypes)).isRequired,
   onClose: PropTypes.func,
   onClick: PropTypes.func,
   autoClose: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
-  customCloseIcon: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  typeStyles: PropTypes.object.isRequired,
-  customStyles: PropTypes.object,
   pauseOnHover: PropTypes.bool,
   transition: PropTypes.oneOfType([PropTypes.oneOf(Object.values(TransitionTypes)), PropTypes.object]),
-  transitionTimeout: PropTypes.number
+  transitionTimeout: PropTypes.number,
+  customCloseIcon: PropTypes.func,
+  customStyles: PropTypes.object
 };
 
 Notification.defaultProps = {
   type: NotificationTypes.default,
-  autoClose: defaultAutoCloseTime,
+  autoClose: true,
   pauseOnHover: true,
   transition: TransitionTypes.slide,
   transitionTimeout: defaultTransitionTimeout
