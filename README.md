@@ -14,8 +14,8 @@ Container component for notifications, recommended to import in root app compone
 ###### TypeStyles
 ```
 {
-    success: (your styles for success notification),
-    warning: (your styles for warning notificaion),
+    success?: (your styles for success notification),
+    warning?: (your styles for warning notificaion),
     ...
 }
 ```
@@ -51,8 +51,8 @@ Function for adding notifications, which takes a message and object with params
 ###### CustomStyles
 ```
 {
-    root: (your styles for notification component),
-    closeWrapper: (your styles for close icon wrapper),
-    closeIcon: (your styles for default close icon)
+    root?: (your styles for notification component),
+    closeWrapper?: (your styles for close icon wrapper),
+    closeIcon?: (your styles for default close icon)
 }
 ```
