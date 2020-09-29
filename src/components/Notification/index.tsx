@@ -72,7 +72,7 @@ export const Notification: React.FC<NotificationType> = ({
           >
             {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)} />}
           </div>
-          <span data-test-id="message">{typeof message !== 'function' ? message : message()}</span>
+          <div data-test-id="message">{typeof message !== 'function' ? message : message()}</div>
         </div>
       )}
     </Transition>
