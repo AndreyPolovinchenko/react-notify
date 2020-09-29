@@ -61,7 +61,10 @@ export const Notification: React.FC<NotificationType> = ({
               ...(typeof transition !== 'string' ? transition[state] : transitionStyles[position][transition][state])
             })._
           )}
-          onClick={onClick}
+          onClick={(e) => {
+            onClick?.();
+            handleClose(e);
+          }}
           onMouseEnter={() => handlePause(true)}
           onMouseLeave={() => handlePause(false)}
         >
