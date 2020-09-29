@@ -1,6 +1,6 @@
-# React-notify
+# React-notify-library
 ```
-import { Notifications, addNotification } from 'react-notify';
+import { Notifications, addNotification } from 'react-notify-library';
 ```
 
 ### Notifications

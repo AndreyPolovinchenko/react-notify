@@ -30,7 +30,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.tsx',
-    library: 'react-notify',
+    library: 'react-notify-library',
     libraryTarget: 'umd'
   },
   externals: {
