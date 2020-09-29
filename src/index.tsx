@@ -12,7 +12,7 @@ import * as styles from './style';
 
 const { subscribe, dispatch } = createObserver();
 
-export const Notifications: React.FC<ContainerType> = ({ position, width, typeStyles }) => {
+export const Notifications: React.FC<ContainerType> = ({ position, width, baseSettings, typeStyles }) => {
   const [notifications, setNotifications]: [Array<NotificationType>, Function] = React.useState([]);
 
   const addNotification = React.useCallback(
@@ -51,6 +51,7 @@ export const Notifications: React.FC<ContainerType> = ({ position, width, typeSt
             position={position}
             typeStyles={{ ...defaultTypeStyles, ...typeStyles }}
             remove={removeNotification}
+            {...baseSettings}
             {...notification}
           />
         ))}
@@ -63,6 +64,7 @@ export const Notifications: React.FC<ContainerType> = ({ position, width, typeSt
 Notifications.propTypes = {
   position: PropTypes.oneOf(Object.values(PositionTypes)),
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  baseSettings: PropTypes.object,
   typeStyles: PropTypes.object
 };
 

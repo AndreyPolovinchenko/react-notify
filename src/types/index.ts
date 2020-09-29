@@ -27,6 +27,7 @@ export type CustomStylesType = {
 export type ContainerType = {
   position: PositionTypes;
   width: string | number;
+  baseSettings?: Object;
   typeStyles?: Object;
 };
 
@@ -50,7 +51,7 @@ export type NotificationType = {
   in?: boolean;
   id: string;
   message: MessageType;
-  type?: NotificationTypes;
+  type: NotificationTypes;
   typeStyles: Object;
   remove: (id: string) => void;
   position: PositionTypes;
@@ -58,8 +59,8 @@ export type NotificationType = {
   onClick?: () => void;
   autoClose?: number | boolean;
   pauseOnHover?: boolean;
-  transition?: TransitionTypes | TransitionType;
-  transitionTimeout?: number;
+  transition: TransitionTypes | TransitionType;
+  transitionTimeout: number;
   customCloseIcon?: Function;
   customStyles?: CustomStylesType;
 };

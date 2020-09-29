@@ -11,7 +11,6 @@ export const container = (position: PositionTypes, width: string | number, isVis
       gridRowGap: '1rem',
       width,
       maxHeight: '100vh',
-      padding: 4,
       boxSizing: 'border-box',
       pointerEvents: !isVisible ? 'none' : 'auto',
       ...positionStyles[position]
