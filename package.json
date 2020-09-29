@@ -9,6 +9,14 @@
   },
   "author": "andrey_polovinchenko",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "react-notify-library",
+    "react-notifications",
+    "react-notifications-library",
+    "react-toast",
+    "react-toast-notifications"
+  ],
   "jest": {
     "transform": {
       "^.+\\.(ts|js)$": "babel-jest"
