@@ -70,7 +70,7 @@ export const Notification: React.FC<NotificationType> = ({
             onClick={handleClose}
             className={css(styles.closeWrapper(customStyles?.closeWrapper)._)}
           >
-            {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)}/>}
+            {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)} />}
           </div>
           <span data-test-id="message">{typeof message !== 'function' ? message : message()}</span>
         </div>
