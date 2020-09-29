@@ -5,6 +5,8 @@ export const notification = (styles?: StylesType) =>
   StyleSheet.create({
     _: {
       position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
       minHeight: 65,
       padding: '2em',
       fontSize: '0.875rem',
