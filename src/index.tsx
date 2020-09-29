@@ -12,7 +12,7 @@ import * as styles from './style';
 
 const { subscribe, dispatch } = createObserver();
 
-export const Notifications: React.FC<ContainerType> = ({ position, typeStyles }) => {
+export const Notifications: React.FC<ContainerType> = ({ position, width, typeStyles }) => {
   const [notifications, setNotifications]: [Array<NotificationType>, Function] = React.useState([]);
 
   const addNotification = React.useCallback(
@@ -43,7 +43,7 @@ export const Notifications: React.FC<ContainerType> = ({ position, typeStyles })
   subscribe('addNotification', addNotification);
 
   return ReactDOM.createPortal(
-    <div className={css(styles.container(position, !!notifications.length)._)}>
+    <div className={css(styles.container(position, width, !!notifications.length)._)}>
       <TransitionGroup component={null}>
         {notifications.map((notification) => (
           <Notification
@@ -62,11 +62,13 @@ export const Notifications: React.FC<ContainerType> = ({ position, typeStyles })
 
 Notifications.propTypes = {
   position: PropTypes.oneOf(Object.values(PositionTypes)),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   typeStyles: PropTypes.object
 };
 
 Notifications.defaultProps = {
-  position: PositionTypes.topRight
+  position: PositionTypes.topRight,
+  width: 320
 };
 
 export const addNotification = (message: MessageType, params: NotificationType) =>

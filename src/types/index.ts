@@ -26,6 +26,7 @@ export type CustomStylesType = {
 
 export type ContainerType = {
   position: PositionTypes;
+  width: string | number;
   typeStyles?: Object;
 };
 

@@ -7,7 +7,7 @@ export const notification = (styles?: StylesType) =>
       position: 'relative',
       minHeight: 65,
       padding: '2em',
-      fontSize: 14,
+      fontSize: '0.875rem',
       color: '#ffffff',
       borderRadius: 1,
       boxShadow: '0 1px 10px 0 rgba(0,0,0,.1), 0 2px 15px 0 rgba(0,0,0,.05)',

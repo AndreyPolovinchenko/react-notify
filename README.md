@@ -9,6 +9,7 @@ Container component for notifications, recommended to import in root app compone
 ##### Props
 
 - position?: ("top-right" (default) | "top-center" | "top-left" | "bottom-right" | "bottom-center" | "bottom-left")
+- width?: String | Number (value will be in px) (default - 320px)
 - typeStyles?: Object - this property is using to rewrite default styles for different notification types, passed object is merging with default type styles, object keys is equal to notification types
 
 ###### TypeStyles
