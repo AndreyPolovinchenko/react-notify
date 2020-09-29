@@ -50,33 +50,31 @@ export const Notification: React.FC<NotificationType> = ({
 
   return (
     <Transition in={render} timeout={transitionTimeout} appear unmountOnExit>
-      {(state) => {
-        return (
+      {(state) => (
+        <div
+          data-test-id="root"
+          className={css(
+            styles.notification({
+              // @ts-ignore
+              ...typeStyles[type],
+              ...customStyles?.root,
+              ...(typeof transition !== 'string' ? transition[state] : transitionStyles[position][transition][state])
+            })._
+          )}
+          onClick={onClick}
+          onMouseEnter={() => handlePause(true)}
+          onMouseLeave={() => handlePause(false)}
+        >
           <div
-            data-test-id="root"
-            className={css(
-              styles.notification({
-                // @ts-ignore
-                ...typeStyles[type],
-                ...customStyles?.root,
-                ...(typeof transition !== 'string' ? transition[state] : transitionStyles[position][transition][state])
-              })._
-            )}
-            onClick={onClick}
-            onMouseEnter={() => handlePause(true)}
-            onMouseLeave={() => handlePause(false)}
+            data-test-id="close"
+            onClick={handleClose}
+            className={css(styles.closeWrapper(customStyles?.closeWrapper)._)}
           >
-            <div
-              data-test-id="close"
-              onClick={handleClose}
-              className={css(styles.closeWrapper(customStyles?.closeWrapper)._)}
-            >
-              {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)} />}
-            </div>
-            <span data-test-id="message">{typeof message !== 'function' ? message : message()}</span>
+            {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)}/>}
           </div>
-        );
-      }}
+          <span data-test-id="message">{typeof message !== 'function' ? message : message()}</span>
+        </div>
+      )}
     </Transition>
   );
 };
