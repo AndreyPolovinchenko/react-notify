@@ -9,22 +9,22 @@ import { css } from 'aphrodite/no-important';
 import * as styles from './style';
 
 export const Notification: React.FC<NotificationType> = ({
-                                                           in: render,
-                                                           id,
-                                                           message,
-                                                           type,
-                                                           typeStyles,
-                                                           remove,
-                                                           position,
-                                                           onClose,
-                                                           onClick,
-                                                           autoClose,
-                                                           pauseOnHover,
-                                                           transition,
-                                                           transitionTimeout,
-                                                           customCloseIcon,
-                                                           customStyles
-                                                         }) => {
+  in: render,
+  id,
+  message,
+  type,
+  typeStyles,
+  remove,
+  position,
+  onClose,
+  onClick,
+  autoClose,
+  pauseOnHover,
+  transition,
+  transitionTimeout,
+  customCloseIcon,
+  customStyles
+}) => {
   let closingTimer: null | TimerType = null;
 
   const handleClose = React.useCallback(
@@ -71,7 +71,7 @@ export const Notification: React.FC<NotificationType> = ({
               onClick={handleClose}
               className={css(styles.closeWrapper(customStyles?.closeWrapper)._)}
             >
-              {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)}/>}
+              {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)} />}
             </div>
             <span data-test-id="message">{typeof message !== 'function' ? message : message()}</span>
           </div>
