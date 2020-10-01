@@ -10,6 +10,7 @@ Container component for notifications, recommended to import in root app compone
 
 - position?: ("top-right" (default) | "top-center" | "top-left" | "bottom-right" | "bottom-center" | "bottom-left")
 - width?: String | Number (value will be in px) (default - 320px)
+- portalId?: String (default - "notifications") - DOM element id, where notifications will be rendered, by default you should have a root DOM element with id="notifications"
 - baseSettings?: Object - this property is using to set up base settings for all notifications, object properties must be one of notification params (params example below)
 - typeStyles?: Object - this property is using to rewrite default styles for different notification types, passed object is merging with default type styles, object properties is equal to notification types
 

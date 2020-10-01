@@ -27,6 +27,7 @@ export type CustomStylesType = {
 export type ContainerType = {
   position: PositionTypes;
   width: string | number;
+  portalId: string;
   baseSettings?: Object;
   typeStyles?: Object;
 };

@@ -12,7 +12,7 @@ import * as styles from './style';
 
 const { subscribe, dispatch } = createObserver();
 
-export const Notifications: React.FC<ContainerType> = ({ position, width, baseSettings, typeStyles }) => {
+export const Notifications: React.FC<ContainerType> = ({ position, width, portalId, baseSettings, typeStyles }) => {
   const [notifications, setNotifications]: [Array<NotificationType>, Function] = React.useState([]);
 
   const addNotification = React.useCallback(
@@ -57,20 +57,22 @@ export const Notifications: React.FC<ContainerType> = ({ position, width, baseSe
         ))}
       </TransitionGroup>
     </div>,
-    document.body
+    document.getElementById(portalId)
   );
 };
 
 Notifications.propTypes = {
   position: PropTypes.oneOf(Object.values(PositionTypes)),
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  portalId: PropTypes.string,
   baseSettings: PropTypes.object,
   typeStyles: PropTypes.object
 };
 
 Notifications.defaultProps = {
   position: PositionTypes.topRight,
-  width: 320
+  width: 320,
+  portalId: 'notifications'
 };
 
 export const addNotification = (message: MessageType, params: NotificationType) =>
