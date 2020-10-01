@@ -29,7 +29,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.tsx',
+    filename: 'index.js',
     library: 'react-notify-library',
     libraryTarget: 'umd'
   },
