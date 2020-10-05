@@ -62,10 +62,10 @@ Function for adding notifications, which takes a message and object with params
 
 ##### Data-attributes for testing
 
-- data-test-id="notifications" - notifications container
-- data-test-id="notification" - notification root component
-- data-test-id="notification-close-wrapper" - close wrapper
-- data-test-id="notification-message" - message
+- data-testid="notifications" - notifications container
+- data-testid="notification" - notification root component
+- data-testid="notification-close-wrapper" - close wrapper
+- data-testid="notification-message" - message
 
 
 
