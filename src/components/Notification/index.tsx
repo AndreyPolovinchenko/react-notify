@@ -52,7 +52,7 @@ export const Notification: React.FC<NotificationType> = ({
     <Transition in={render} timeout={transitionTimeout} appear unmountOnExit>
       {(state) => (
         <div
-          data-test-id="root"
+          data-test-id="notification"
           className={css(
             styles.notification({
               // @ts-ignore
@@ -69,13 +69,13 @@ export const Notification: React.FC<NotificationType> = ({
           onMouseLeave={() => handlePause(false)}
         >
           <div
-            data-test-id="close"
+            data-test-id="notification-close-wrapper"
             onClick={handleClose}
             className={css(styles.closeWrapper(customStyles?.closeWrapper)._)}
           >
             {customCloseIcon ? customCloseIcon() : <Close className={css(styles.close(customStyles?.closeIcon)._)} />}
           </div>
-          <div data-test-id="message">{typeof message !== 'function' ? message : message()}</div>
+          <div data-test-id="notification-message">{typeof message !== 'function' ? message : message()}</div>
         </div>
       )}
     </Transition>

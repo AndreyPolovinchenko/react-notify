@@ -59,3 +59,13 @@ Function for adding notifications, which takes a message and object with params
     closeIcon?: (your styles for default close icon)
 }
 ```
+
+##### Data-attributes for testing
+
+- data-test-id="notifications" - notifications container
+- data-test-id="notification" - notification root component
+- data-test-id="notification-close-wrapper" - close wrapper
+- data-test-id="notification-message" - message
+
+
+

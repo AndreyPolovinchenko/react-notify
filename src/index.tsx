@@ -43,7 +43,7 @@ export const Notifications: React.FC<ContainerType> = ({ position, width, portal
   subscribe('addNotification', addNotification);
 
   return ReactDOM.createPortal(
-    <div className={css(styles.container(position, width, !!notifications.length)._)}>
+    <div className={css(styles.container(position, width, !!notifications.length)._)} data-test-id="notifications">
       <TransitionGroup component={null}>
         {notifications.map((notification) => (
           <Notification
